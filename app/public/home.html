@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Hot Restauraunt</title>
+  <!-- Latest compiled and minified CSS & JS -->
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+  <script src="https://code.jquery.com/jquery.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
+
+</head>
+<body>
+
+  <div class="container">
+    <div class="jumbotron">
+      <h1>Friend Finder</h1>
+      <h3>Find buddies.</h3>
+      <hr>
+      <a href="/reserve"><button class="btn btn-danger btn-lg"><span class="fa fa-plus"></span>Make Reservation</button></a>
+    </div>
+    <div class="row">
+
+      <div class="col-lg-12">
+
+        <div class="panel panel-default">
+          <div class="panel-heading">
+            <h3 class="panel-title"><strong>Current Reservations</strong></h3>
+          </div>
+          <div class="panel-body">
+            <input type="text" id="table-search" class="form-control">
+            <br>
+            <div class="text-right">
+              <button type="submit" class="btn btn-primary btn-md" id="search-btn"><span class="fa fa-search"></span> Search Reservations By Unique ID.</button>
+
+            </div>
+          </div>
+        </div>
+
+        <div class="panel panel-default">
+          <div class="panel-heading">
+            <h3 class="panel-title"><strong>Reservations</strong></h3>
+          </div>
+          <div class="panel-body">
+            <div class="well">
+              <h2 id="name">Yoda</h2>
+              <div id="stats">
+                <h3><strong>Phone:</strong> <span id="phone">1-800-JEDI</span></h3>
+                <h3><strong>Email:</strong> <span id="email">radIam@gmail.com</span></h3>
+                <h3><strong>Unique ID:</strong> <span id="uniqueID">2000</span></h3>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <script type="text/javascript">
+    $("#search-btn").on("click", function() {
+      var searchedTable = $("#table-search").val().trim();
+
+      // Using a RegEx Pattern to remove spaces from searchedCharacter
+      // You can read more about RegEx Patterns later https://www.regexbuddy.com/regex.html
+      searchedTable = searchedTable.replace(/\s+/g, "").toLowerCase();
+
+      $.get("/tables" + searchedTable, function(data) {
+        console.log(data);
+        if (data) {
+          $("#stats").show();
+          $("#name").text(data.name);
+          $("#phone").text(data.phone);
+          $("#email").text(data.email);
+          $("#uniqueID").text(data.uniqueID);
+        }
+        else {
+          $("#name").text("The force is not strong with this one. Your table was not found.");
+          $("#stats").hide();
+        }
+      });
+    });
+  </script>
+</body>
+</html>
