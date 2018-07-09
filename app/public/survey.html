@@ -2,22 +2,21 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <title>Hot Restuarant</title>
+  <title>Friend Finder</title>
   <!-- Latest compiled and minified CSS & JS -->
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
   <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
   <script src="https://code.jquery.com/jquery.js"></script>
-  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.bundle.min.js"></script>
 
 </head>
 <body>
 
   <div class="container">
     <div class="jumbotron">
-      <h1>Hot Restuarant</h1>
-      <h3>Current Reservations and Waiting List</h3>
+      <h2>Survey Questions</h2>
       <hr>
-      <a href="/"><button class="btn btn-danger btn-lg"><span class="fa fa-eye"></span> View Tables</button></a>
+      <a href="/api/friends"><button class="btn btn-danger btn-lg"><span class="fa fa-eye"></span> View Friends</button></a>
     </div>
     <div class="row">
 
@@ -25,35 +24,177 @@
 
         <div class="panel panel-default">
           <div class="panel-heading">
-            <h3 class="panel-title"><strong>Make A Reservation</strong></h3>
+            <h3 class="panel-title"><strong>About You.</strong></h3>
           </div>
           <div class="panel-body">
             <form method="POST" role="form">
 
               <div class="form-group">
-                <label for="name">Name</label>
+                <label for="name">Name (Required)</label>
                 <input type="text" class="form-control" id="name">
               </div>
 
               <div class="form-group">
-                <label for="phone">Phone</label>
-                <input type="text" class="form-control" id="role">
+                <label for="phone">Link to Photo Image (Required)</label>
+                <input type="text" class="form-control" id="photo">
               </div>
 
               <div class="form-group">
-                <label for="email">Email</label>
-                <input type="text" class="form-control" id="age">
+                <h4>Question One</h4>
+                <h5>Your mind is always buzzing with unexplored ideas and plans.</h5>
+                    <label for="q1">Select list:</label>
+                    <select class="form-control" id="q1">
+                      <option value="1">1 (Strongly Disagree)</option>
+                      <option>2</option>
+                      <option>3</option>
+                      <option>4</option>
+                      <option value="5">5 (Strongly Agree)</option>
+                    </select>
               </div>
-
+              <hr>
               <div class="form-group">
-                <label for="uniqueID">UniqueID</label>
-                <input type="text" class="form-control" id="force-points">
-              </div>
-
+                  <h4>Question Two</h4>
+                  <h5>You love dogs.</h5>
+                      <label for="q2">Select list:</label>
+                      <select class="form-control" id="q2">
+                        <option value="1">1 (Strongly Disagree)</option>
+                        <option>2</option>
+                        <option>3</option>
+                        <option>4</option>
+                        <option value="5">5 (Strongly Agree)</option>
+                      </select>
+                </div>
+                <hr>
+                <div class="form-group">
+                    <h4>Question Three</h4>
+                    <h5>You can't stand olives.</h5>
+                        <label for="q3">Select list:</label>
+                        <select class="form-control" id="q3">
+                          <option value="1">1 (Strongly Disagree)</option>
+                          <option value="2">2</option>
+                          <option value="3">3</option>
+                          <option value="4">4</option>
+                          <option value="5">5 (Strongly Agree)</option>
+                        </select>
+                  </div>
+                  <hr>
+                  <div class="form-group">
+                    <h4>Question Four</h4>
+                    <h5>Your mind is always buzzing with unexplored ideas and plans.</h5>
+                        <label for="q4">Select list:</label>
+                        <select class="form-control" id="q4">
+                          <option value="1">1 (Strongly Disagree)</option>
+                          <option>2</option>
+                          <option>3</option>
+                          <option>4</option>
+                          <option value="5">5 (Strongly Agree)</option>
+                        </select>
+                  </div>
+                  <hr>
+                  <div class="form-group">
+                      <h4>Question Five</h4>
+                      <h5>You love dogs.</h5>
+                          <label for="q5">Select list:</label>
+                          <select class="form-control" id="q5">
+                            <option value="1">1 (Strongly Disagree)</option>
+                            <option>2</option>
+                            <option>3</option>
+                            <option>4</option>
+                            <option value="5">5 (Strongly Agree)</option>
+                          </select>
+                    </div>
+                    <hr>
+                    <div class="form-group">
+                        <h4>Question Six</h4>
+                        <h5>You can't stand olives.</h5>
+                            <label for="q6">Select list:</label>
+                            <select class="form-control" id="q6">
+                              <option value="1">1 (Strongly Disagree)</option>
+                              <option value="2">2</option>
+                              <option value="3">3</option>
+                              <option value="4">4</option>
+                              <option value="5">5 (Strongly Agree)</option>
+                            </select>
+                    </div>
+                    <hr>
+                <div class="form-group">
+                    <h4>Question Seven</h4>
+                    <h5>You can't stand olives.</h5>
+                        <label for="q7">Select list:</label>
+                        <select class="form-control" id="q7">
+                          <option value="1">1 (Strongly Disagree)</option>
+                          <option value="2">2</option>
+                          <option value="3">3</option>
+                          <option value="4">4</option>
+                          <option value="5">5 (Strongly Agree)</option>
+                        </select>
+                  </div>
+                  <hr>
+                  <div class="form-group">
+                    <h4>Question Eight</h4>
+                    <h5>Your mind is always buzzing with unexplored ideas and plans.</h5>
+                        <label for="q8">Select list:</label>
+                        <select class="form-control" id="q8">
+                          <option value="1">1 (Strongly Disagree)</option>
+                          <option>2</option>
+                          <option>3</option>
+                          <option>4</option>
+                          <option value="5">5 (Strongly Agree)</option>
+                        </select>
+                  </div>
+                  <hr>
+                  <div class="form-group">
+                      <h4>Question Nine</h4>
+                      <h5>You love dogs.</h5>
+                          <label for="q9">Select list:</label>
+                          <select class="form-control" id="q9">
+                            <option value="1">1 (Strongly Disagree)</option>
+                            <option>2</option>
+                            <option>3</option>
+                            <option>4</option>
+                            <option value="5">5 (Strongly Agree)</option>
+                          </select>
+                    </div>
+                    <hr>
+                    <div class="form-group">
+                        <h4>Question Ten</h4>
+                        <h5>You can't stand olives.</h5>
+                            <label for="q10">Select list:</label>
+                            <select class="form-control" id="q10">
+                              <option value="1">1 (Strongly Disagree)</option>
+                              <option value="2">2</option>
+                              <option value="3">3</option>
+                              <option value="4">4</option>
+                              <option value="5">5 (Strongly Agree)</option>
+                            </select>
+                    </div>
+                    <hr>
             </form>
+
             <br>
+
+            <!-- Results Modal -->
+            <div id="myModal" class="modal fade" role="dialog">
+              <div class="modal-dialog">
+
+                <!-- Modal content-->
+                <div class="modal-content">
+                  <div class="modal-header">
+                    <h4 class="modal-title">Your New Best Friend</h4>
+                  </div>
+                  <div class="modal-body">
+                    <p id="results"></p>
+                  </div>
+                  <div class="modal-footer">
+                    <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                  </div>
+                </div>
+
+              </div>
+            </div>
+
             <div class="text-right">
-              <button type="submit" class="btn btn-primary btn-md" id="add-btn"><span class="fa fa-fire"></span>Reserve A Table</button>
+              <button type="submit" class="btn btn-primary btn-md" id="sub-btn" data-toggle="modal" data-target="#myModal"><span class="fa fa-fire"></span>Submit</button>
             </div>
           </div>
         </div>
@@ -63,24 +204,115 @@
   </div>
 
   <script type="text/javascript">
-    // Question: What does this code do?
-    $("#add-btn").on("click", function(event) {
+
+
+    function runFriendMatch() {
+
+        // Here we get the location of the root page.
+        // We use this instead of explicitly saying the URL is localhost:3001 because the url will change when we deploy.
+        var currentURL = window.location.origin;
+
+        // The AJAX function uses the URL of our API to GET the data associated with it (initially set to localhost)
+        $.ajax({ url: currentURL + "/api/friends", method: "GET" })
+          .then(function(friendData) {
+
+          // Here we are logging the URL so we have access to it for troubleshooting
+            console.log("------------------------------------");
+            console.log("URL: " + currentURL + "/api/friends");
+            console.log("------------------------------------");
+
+            // Here we then log the NYTData to console, where it will show up as an object.
+            console.log(friendData);
+            console.log("------------------------------------");
+
+            var total = 0;
+            // Loop through and display each of the customers
+            for (var i = 0; i < friendData.length; i++) {
+
+                eachScore = friendData[i].scores;
+              }
+
+        });
+ };
+
+
+    scoreArray = [];
+
+    // Creates new friend from submitted form 
+    $("#sub-btn").on("click", function(event) {
+
+      var q1 = ($("#q1").val());
+      console.log($("#q1").val());
+
+      var q2 = ($("#q2").val());
+      console.log($("#q2").val());
+
+      var q3 = ($("#q3").val());
+      console.log($("#q3").val());
+
+      var q4 = ($("#q4").val());
+      console.log($("#q4").val());
+
+      var q5 = ($("#q5").val());
+      console.log($("#q5").val());
+
+      var q6 = ($("#q6").val());
+      console.log($("#q6").val());
+
+      var q7 = ($("#q7").val());
+      console.log($("#q7").val());
+
+      var q8 = ($("#q8").val());
+      console.log($("#q8").val());
+
+      var q9 = ($("#q9").val());
+      console.log($("#q9").val());
+
+      var q10 = ($("#q10").val());
+      console.log($("#q10").val());
+
+      scoreArray.push(q1);
+      scoreArray.push(q2);
+      scoreArray.push(q3);
+      scoreArray.push(q4);
+      scoreArray.push(q5);
+      scoreArray.push(q6);
+      scoreArray.push(q7);
+      scoreArray.push(q8);
+      scoreArray.push(q9);
+      scoreArray.push(q10);
+      console.log(scoreArray);
+
       event.preventDefault();
-      var newTable = {
+      var newFriend = {
         name: $("#name").val().trim(),
-        role: $("#phone").val().trim(),
-        age: $("#email").val().trim(),
-        forcePoints: $("#uniqueID").val().trim()
+        photo: $("#photo").val().trim(),
+        scores: scoreArray
       };
 
-      // Question: What does this code do??
-      $.post("/api/tables", newTable)
-        .then(function(data) {
-          console.log("add.html", data);
-          alert("Reserving Table...");
-        });
-    });
+      console.log(newFriend);
+
+      // Posts new friend to friend API list
+    $.post("/api/friends", newFriend,
+      function(data) {
+
+        if (data) {
+          console.log(data);
+          runFriendMatch();
+        }
+        else {
+          alert("Sorry. There was an error. Please refresh the page.");
+        }
+
+        // Clear the form when submitting
+        $("#name").val("");
+        $("#photo").val("");
+        scoreArray = [];
+
+      });
+  });
   </script>
 
 </body>
 </html>
+
